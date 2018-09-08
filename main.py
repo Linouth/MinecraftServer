@@ -52,22 +52,11 @@ class MinecraftServer():
         self.modules += [module]
 
 
-class Users:
-    def __init__(self):
-        self.users = []
-
-    def handle(self, server, line):
-        m = re.search(r'There are \d+ of a max \d+ players online: (.*)', line)
-        if m:
-            self.users = m.group(1).split(', ')
-            print('Users: ' + ' ,'.join(self.users))
-
-
 if __name__ == '__main__':
     server = MinecraftServer(cwd='server/', jar='server.jar')
     server.start()
 
-    user_module = Users()
+    user_module = modules.Users()
     server.add_module(interface)
     server.add_module(user_module)
 
