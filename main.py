@@ -1,8 +1,8 @@
 import subprocess
 import threading
 import time
-import re
 from interface import interface
+import modules
 
 
 class MinecraftServer():

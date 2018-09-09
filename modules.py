@@ -1,3 +1,6 @@
+import re
+
+
 class Module(object):
     def handle(self, server, line):
         raise NotImplementedError
