@@ -3,6 +3,7 @@ import threading
 import time
 from interface import interface
 import modules
+import discordmod
 
 
 class MinecraftServer():
@@ -58,7 +59,11 @@ if __name__ == '__main__':
 
     user_module = modules.Users()
     server.add_module(interface)
+
     server.add_module(user_module)
+
+    discord_module = discordmod.DiscordBot()
+    server.add_module(discord_module)
 
     try:
         while True:
